@@ -67,47 +67,39 @@ Now, Queue becomes empty, So, terminate these process of iteration.
 
 </ol>
 <hr>
-<h6>Program:</h6>
+<h3>Program:</h3>
 <hr>
-'''
-from collections import defaultdict, deque
 
+from collections import defaultdict, deque
 def bfs(graph, start):
     visited = set()
     queue = deque([start])
     traversal_order = []
-
     while queue:
         node = queue.popleft()
         if node not in visited:
             traversal_order.append(node)
             visited.add(node)
             queue.extend(graph[node])
-
     return traversal_order
-
 def main():
     # Getting input from the user
     num_nodes, num_edges = map(int, input("Enter the number of nodes and edges (separated by space): ").split())
-
     edges = []
     print("Enter the edges (format: <node1> <node2>): ")
     for _ in range(num_edges):
         edge = input().split()
         edges.append((edge[0], edge[1]))
-
     graph = defaultdict(list)
     for edge in edges:
         graph[edge[0]].append(edge[1])
         graph[edge[1]].append(edge[0])  # Assuming an undirected graph
-
     start_node = input("Enter the starting node: ")
     traversal_order = bfs(graph, start_node)
     print("BFS Traversal Order:", traversal_order)
-
 if _name_ == "_main_":
     main()
-```
+
 <hr>
 <h3>Sample Input</h3>
 <hr>
