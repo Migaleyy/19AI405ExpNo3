@@ -67,9 +67,9 @@ Now, Queue becomes empty, So, terminate these process of iteration.
 
 </ol>
 <hr>
-<h3>Program:</h3>
+<h2>Program:</h2>
 <hr>
-
+```
 from collections import defaultdict, deque
 def bfs(graph, start):
     visited = set()
@@ -99,7 +99,7 @@ def main():
     print("BFS Traversal Order:", traversal_order)
 if _name_ == "_main_":
     main()
-
+```
 <hr>
 <h3>Sample Input</h3>
 <hr>
